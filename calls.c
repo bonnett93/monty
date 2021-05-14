@@ -7,10 +7,11 @@
  */
 void run_line(char *instruction, unsigned int line)
 {
-	char *opcode;
-	char *n;
+	char *opcode, *n; 
 
 	opcode = strtok(instruction, " ");
+	if (opcode == NULL)
+		return;
 	n = strtok(NULL, " ");
 	find_match(opcode, n, line);
 }
@@ -40,7 +41,7 @@ void find_match(char *opcode, char *n, unsigned int line)
 	}
 	if (match == 99)
 	{
-		dprintf(STDERR_FILENO, "L%u: unknown instruction %s", line, opcode);
+		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line, opcode);
 		exit(EXIT_FAILURE);
 	}
 	if (match == 0)
@@ -61,7 +62,7 @@ void new_node(char *n, unsigned int line)
 
 	if (n == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: usage: push integer", line);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line);
 		exit(EXIT_FAILURE);
 	}
 	if (n[0] == '-')
@@ -70,14 +71,14 @@ void new_node(char *n, unsigned int line)
 	{
 		if (isdigit(n[j]) == 0)
 		{
-			dprintf(STDERR_FILENO, "L%u: usage: push integer", line);
+			dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line);
 			exit(EXIT_FAILURE);
 		}
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = atoi(n);

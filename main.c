@@ -41,7 +41,7 @@ void read_textfile(const char *filename)
 	while (control != EOF)
 	{
 		control = getline(&instruction, &bytes_read, fd);
-		if (control > 0)
+		if (control > 1)
 		{
 			instruction[control - 1] = '\0';
 			run_line(instruction, line);
