@@ -10,7 +10,7 @@ void run_line(char *instruction, unsigned int line)
 	char *opcode, *n;
 
 	opcode = strtok(instruction, " ");
-	if (opcode == NULL)
+	if (opcode == NULL || opcode[0] == '#')
 		return;
 	n = strtok(NULL, " ");
 	find_match(opcode, n, line);

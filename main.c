@@ -45,8 +45,8 @@ void read_textfile(const char *filename)
 		{
 			instruction[control - 1] = '\0';
 			run_line(instruction, line);
-			line++;
 		}
+		line++;
 	}
 	fclose(fd);
 	free(instruction);
