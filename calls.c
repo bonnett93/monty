@@ -34,6 +34,7 @@ void find_match(char *opcode, char *n, unsigned int line)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	for (i = 0; match_array[i].opcode; i++)
