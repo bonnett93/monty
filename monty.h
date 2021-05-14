@@ -68,4 +68,7 @@ void pall(stack_t **head, unsigned int n);
 
 /*task1_2_3*/
 void pint(stack_t **head, unsigned int n);
+
+void pop(stack_t **head, unsigned int n);
+
 #endif
