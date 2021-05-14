@@ -7,7 +7,7 @@
  */
 void run_line(char *instruction, unsigned int line)
 {
-	char *opcode, *n; 
+	char *opcode, *n;
 
 	opcode = strtok(instruction, " ");
 	if (opcode == NULL)
