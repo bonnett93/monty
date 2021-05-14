@@ -71,4 +71,6 @@ void pint(stack_t **head, unsigned int n);
 
 void pop(stack_t **head, unsigned int n);
 
+void swap(stack_t **head, unsigned int line);
+
 #endif

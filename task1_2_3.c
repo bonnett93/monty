@@ -37,3 +37,28 @@ void pop(stack_t **head, unsigned int line)
 	free(*head);
 	*head = NULL;
 }
+
+/**
+ * swap - swaps the top two elements of the stack.
+ * @head: Pointer to dlinkedlist head.
+ * @line: File number line where the instruction is.
+ */
+void swap(stack_t **head, unsigned int line)
+{
+	stack_t *tmp = *head;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		dprintf(2, "L%u: L<line_number>: can't swap, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
+
+	*head = (*head)->next;
+	if ((*head)->next != NULL)
+		(*head)->next->prev = tmp;
+
+	tmp->next = (*head)->next;
+	(*head)->next = tmp;
+	tmp->prev = *head;
+	(*head)->prev = NULL;
+}
