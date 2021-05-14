@@ -47,6 +47,7 @@ void find_match(char *opcode, char *n, unsigned int line)
 	if (match == 99)
 	{
 		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line, opcode);
+		free_mem();
 		exit(EXIT_FAILURE);
 	}
 	if (match == 0)
@@ -68,6 +69,7 @@ void new_node(char *n, unsigned int line)
 	if (n == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line);
+		free_mem();
 		exit(EXIT_FAILURE);
 	}
 	if (n[0] == '-')
@@ -77,6 +79,7 @@ void new_node(char *n, unsigned int line)
 		if (isdigit(n[j]) == 0)
 		{
 			dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line);
+			free_mem();
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -84,6 +87,7 @@ void new_node(char *n, unsigned int line)
 	if (new == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		free_mem();
 		exit(EXIT_FAILURE);
 	}
 	new->n = atoi(n);

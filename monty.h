@@ -66,7 +66,7 @@ void push(stack_t **head, unsigned int n);
 
 void pall(stack_t **head, unsigned int n);
 
-/*task1_2_3*/
+/*task_1_to_5*/
 void pint(stack_t **head, unsigned int n);
 
 void pop(stack_t **head, unsigned int n);
@@ -76,5 +76,8 @@ void swap(stack_t **head, unsigned int line);
 void add(stack_t **head, unsigned int line);
 
 void nop(stack_t **head, unsigned int line);
+
+/*task_6_to_9*/
+void sub(stack_t **head, unsigned int line);
 
 #endif
