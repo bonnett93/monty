@@ -49,7 +49,7 @@ void swap(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: L<line_number>: can't swap, stack too short\n", line);
+		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -61,4 +61,34 @@ void swap(stack_t **head, unsigned int line)
 	(*head)->next = tmp;
 	tmp->prev = *head;
 	(*head)->prev = NULL;
+}
+
+/**
+ * add - adds the top two elements of the stack.
+ * @head: Pointer to dlinkedlist head.
+ * @line: File number line where the instruction is.
+ */
+void add(stack_t **head, unsigned int line)
+{
+	stack_t *tmp;
+
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", line);
+		exit(EXIT_FAILURE);
+	}
+	tmp = (*head)->next;
+	tmp->n = tmp->n + (*head)->n;
+	pop(head, line);
+}
+
+/**
+ * nop - The opcode nop doesn’t do anything.
+ * @head: Pointer to dlinkedlist head.
+ * @line: File number line where the instruction is.
+ */
+void nop(stack_t **head, unsigned int line)
+{
+	(void)head;
+	(void)line;
 }
