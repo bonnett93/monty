@@ -80,4 +80,6 @@ void nop(stack_t **head, unsigned int line);
 /*task_6_to_9*/
 void sub(stack_t **head, unsigned int line);
 
+void divided(stack_t **head, unsigned int line);
+
 #endif
