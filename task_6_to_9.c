@@ -81,7 +81,7 @@ void mod(stack_t **head, unsigned int line)
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't div, stack too short\n", line);
+		dprintf(STDERR_FILENO, "L%u: can't mod, stack too short\n", line);
 		free_mem();
 		exit(EXIT_FAILURE);
 	}
