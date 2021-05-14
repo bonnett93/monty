@@ -49,18 +49,23 @@ extern stack_t *head;
 
 /* --Functions-- */
 
+/*main*/
 void read_textfile(const char *filename);
 
 void free_mem(void);
 
+/*calls*/
 void run_line(char *instruction, unsigned int line);
 
 void find_match(char *opcode, char *n, unsigned int line);
 
 void new_node(char *n, unsigned int line);
 
+/*task0*/
 void push(stack_t **head, unsigned int n);
 
 void pall(stack_t **head, unsigned int n);
 
+/*task1_2_3*/
+void pint(stack_t **head, unsigned int n);
 #endif

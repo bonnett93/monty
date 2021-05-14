@@ -29,6 +29,7 @@ void find_match(char *opcode, char *n, unsigned int line)
 	instruction_t match_array[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 	for (i = 0; match_array[i].opcode; i++)
