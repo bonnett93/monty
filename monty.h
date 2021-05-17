@@ -93,4 +93,6 @@ void pstr(stack_t **head, unsigned int line);
 
 void rotl(stack_t **head, unsigned int line);
 
+void rotr(stack_t **head, unsigned int line);
+
 #endif
