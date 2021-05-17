@@ -34,6 +34,7 @@ void pstr(stack_t **head, unsigned int line)
 {
 	stack_t *tmp = *head;
 
+	(void)line;
 	while (tmp != NULL)
 	{
 		if ((tmp->n <= 0 || tmp->n > 127))
