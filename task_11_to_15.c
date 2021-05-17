@@ -46,3 +46,27 @@ void pstr(stack_t **head, unsigned int line)
 	}
 	printf("\n");
 }
+
+/**
+ * rotl - rotates the stack to the top.
+ * @head: Pointer to dlinkedlist head.
+ * @line: File number line where the instruction is.
+ */
+void rotl(stack_t **head, unsigned int line)
+{
+	
+	int x = 0;
+	stack_t *tmp = *head;
+
+	(void)line;
+	if (*head == NULL || (*head)->next == NULL)
+		return;
+
+	x = (*head)->n;
+	while(tmp->next != NULL)
+	{
+		tmp->n = tmp->next->n;
+		tmp = tmp->next;
+	}
+	tmp->n = x;
+}
