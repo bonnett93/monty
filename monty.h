@@ -86,4 +86,7 @@ void mul(stack_t **head, unsigned int line);
 
 void mod(stack_t **head, unsigned int line);
 
+/*task_11_to_15*/
+void pchar(stack_t **head, unsigned int line);
+
 #endif
