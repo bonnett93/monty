@@ -1,8 +1,7 @@
 #include "monty.h"
 
 /**
- * pchar - multiplies the second top element of the stack with
- * the top element of the stack.
+ * pchar - prints the char at the top of the stack, followed by a new line.
  * @head: Pointer to dlinkedlist head.
  * @line: File number line where the instruction is.
  */
@@ -23,4 +22,26 @@ void pchar(stack_t **head, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (*head)->n);
+}
+
+/**
+ * pstr - prints the string starting at the top of the stack,
+ * followed by a new line.
+ * @head: Pointer to dlinkedlist head.
+ * @line: File number line where the instruction is.
+ */
+void pstr(stack_t **head, unsigned int line)
+{
+	stack_t *tmp = *head;
+
+	while (tmp != NULL)
+	{
+		if ((tmp->n <= 0 || tmp->n > 127))
+		{
+			break;
+		}
+		printf("%c", (*head)->n);
+		tmp = tmp->next;
+	}
+	printf("\n");
 }
