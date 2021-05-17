@@ -41,7 +41,7 @@ void pstr(stack_t **head, unsigned int line)
 		{
 			break;
 		}
-		printf("%c", (*head)->n);
+		printf("%c", tmp->n);
 		tmp = tmp->next;
 	}
 	printf("\n");
